@@ -1,0 +1,664 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="pengertian dan implementasi decision tree">
+      
+      
+        <link rel="canonical" href="https://MaraQonita.github.io/160441100010-decisiontree_nita/Definisi dan Implementasi Decision Trees/">
+      
+      
+        <meta name="author" content="Mara qonitatila">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
+    
+    
+      
+        <title>decision tree tree_addhealth data - decicion tree MaraQonita</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.750b69bd.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "None", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#definisi-dan-implementasi-decision-trees" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://MaraQonita.github.io/160441100010-decisiontree_nita/" title="decicion tree MaraQonita" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              decicion tree MaraQonita
+            </span>
+            <span class="md-header-nav__topic">
+              decision tree tree_addhealth data
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/MaraQonita/160441100010-decisiontree_nita" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    MaraQonita/160441100010-decisiontree_nita
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://MaraQonita.github.io/160441100010-decisiontree_nita/" title="decicion tree MaraQonita" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    decicion tree MaraQonita
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/MaraQonita/160441100010-decisiontree_nita" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    MaraQonita/160441100010-decisiontree_nita
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        decision tree tree_addhealth data
+      </label>
+    
+    <a href="./" title="decision tree tree_addhealth data" class="md-nav__link md-nav__link--active">
+      decision tree tree_addhealth data
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#berikut-implementasi-dari-decision-trees" title="Berikut Implementasi dari Decision Trees :" class="md-nav__link">
+    Berikut Implementasi dari Decision Trees :
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-1-import-library" title="Langkah 1. Import Library" class="md-nav__link">
+    Langkah 1. Import Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-2-load-data-set" title="Langkah 2.  Load Data Set" class="md-nav__link">
+    Langkah 2.  Load Data Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-3-explore-data-set" title="Langkah 3. Explore Data Set" class="md-nav__link">
+    Langkah 3. Explore Data Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-4-cleaning-data-set" title="Langkah 4. Cleaning Data Set" class="md-nav__link">
+    Langkah 4. Cleaning Data Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-5-modelling-and-prediction" title="Langkah 5. Modelling and Prediction" class="md-nav__link">
+    Langkah 5. Modelling and Prediction
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#berikut-implementasi-dari-decision-trees" title="Berikut Implementasi dari Decision Trees :" class="md-nav__link">
+    Berikut Implementasi dari Decision Trees :
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-1-import-library" title="Langkah 1. Import Library" class="md-nav__link">
+    Langkah 1. Import Library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-2-load-data-set" title="Langkah 2.  Load Data Set" class="md-nav__link">
+    Langkah 2.  Load Data Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-3-explore-data-set" title="Langkah 3. Explore Data Set" class="md-nav__link">
+    Langkah 3. Explore Data Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-4-cleaning-data-set" title="Langkah 4. Cleaning Data Set" class="md-nav__link">
+    Langkah 4. Cleaning Data Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-5-modelling-and-prediction" title="Langkah 5. Modelling and Prediction" class="md-nav__link">
+    Langkah 5. Modelling and Prediction
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="definisi-dan-implementasi-decision-trees">Definisi dan Implementasi Decision Trees<a class="headerlink" href="#definisi-dan-implementasi-decision-trees" title="Permanent link">&para;</a></h1>
+<p><em>Decision tree</em> (pohon keputusan) adalah model prediksi menggunakan struktur pohon atau struktur berhirarki. <em>Decision tree</em> juga berguna untuk mengeksplorasi data, menemukan hubungan tersembunyi antara sejumlah calon variabel input dengan sebuah variabel target. </p>
+<p><strong>Manfaat utama</strong> dari penggunaan <em>decision tree</em> adalah kemampuannya untuk mem-<em>break down</em> proses pengambilan keputusan yang kompleks menjadi lebih simple, sehingga pengambil keputusan akan lebih menginterpretasikan solusi dari permasalahan.</p>
+<p>Kelebihan  <em>decision trees</em></p>
+<ol>
+<li>Mampu mengeliminasi perhitungan atau data-data yang kiranya tidak diperlukan. </li>
+<li>Untuk mengeksplorasi data</li>
+<li>Menemukan hubungan tersembunyi antara sejumlah calon variabel input dengan sebuah variabel target.</li>
+</ol>
+<p>Kekurangan <em>decision trees</em> </p>
+<ol>
+<li>Bisa terjadi overlap, terutama ketika kelas dan kriteria yang digunakan terlalu banyak </li>
+<li>Dalam hal akumulasi, <em>decision tree</em> juga seringkali mengalami kendala eror terutama dalam jumlah besar.</li>
+<li>Kesulitan dalam mendesain <em>decision tree</em> yang optimal.</li>
+</ol>
+<p>Terlepas dari kekurangan dan kelebihan dari <em>decision tree</em>, metode ini banyak digunakan lebih lanjut dalam berbagai pengolahan data. Mulai dari data mining dan juga <em>machine learning</em>. Dalam dunia kerja, <em>decision tree</em> sendiri sangat berguna untuk penilaian <em>credit scoring</em> .</p>
+<p>Pertama-tama  pastikan lo dah install python 3 dan beberapa python packages seperti :</p>
+<ul>
+<li>Pandas</li>
+<li>Numpy</li>
+<li>Matplotlib</li>
+<li>Scikit learn</li>
+<li>Jupyter Notebook —-&gt; saya pake ini untuk IDE nya</li>
+</ul>
+<h3 id="berikut-implementasi-dari-decision-trees">Berikut Implementasi dari <em>Decision Trees</em> :<a class="headerlink" href="#berikut-implementasi-dari-decision-trees" title="Permanent link">&para;</a></h3>
+<h3 id="langkah-1-import-library">Langkah 1. Import Library<a class="headerlink" href="#langkah-1-import-library" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code class="language-python">%matplotlib inline
+from pandas import Series, DataFrame
+import pandas as pd
+import numpy as np
+import os
+import matplotlib.pylab as plt
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import classification_report
+from sklearn import tree
+import sklearn.metrics
+from sklearn import tree
+from io import StringIO
+from IPython.display import Image
+import pydotplus</code></pre>
+
+<h3 id="langkah-2-load-data-set"><strong>Langkah 2.  Load Data Set</strong><a class="headerlink" href="#langkah-2-load-data-set" title="Permanent link">&para;</a></h3>
+<pre class="codehilite"><code class="language-python">os.chdir("E:\latihan")      #lokasi folder dimana terdapat file yang akan di load
+# Load dataset
+data = pd.read_csv("tree_addhealth.csv"</code></pre>
+
+<p>karena file yang akan kita olah merupakan file csv maka perintah nya</p>
+<pre class="codehilite"><code class="language-python">data = pd.read_csv('nama file')</code></pre>
+
+<p>apabila nantinya  file yang akan kita olah adalah excel file maka perintahnya </p>
+<pre class="codehilite"><code class="language-python">data = pd.read_excel('nama file')</code></pre>
+
+<p>Pastikan file jupyter notebooknya berada dalam folder yang sama dengan data yang akan diolah.</p>
+<h3 id="langkah-3-explore-data-set"><strong>Langkah 3. Explore Data Set</strong><a class="headerlink" href="#langkah-3-explore-data-set" title="Permanent link">&para;</a></h3>
+<p>Gunakan perintah</p>
+<pre class="codehilite"><code class="language-python">data.head(10)</code></pre>
+
+<p>untuk menampilkan 10 baris pertama pada tabel</p>
+<pre class="codehilite"><code class="language-python"># Explore data
+print(data.shape)
+data.head(10)</code></pre>
+
+<p><img alt="" src="../assets/images/3.png" /></p>
+<pre class="codehilite"><code class="language-python">print(data.shape)</code></pre>
+
+<p>akan menampilkan jumlah baris dan kolam, pada data yang akan kita olah ini terdapat 6504 baris dan 25 kolam.</p>
+<p>Gunakan perintah</p>
+<pre class="codehilite"><code class="language-python">data.describe()</code></pre>
+
+<p>untuk melihat nilai mean, standard deviasi, dll.</p>
+<p><img alt="" src="G:assets\images\4.png" /></p>
+<h3 id="langkah-4-cleaning-data-set"><strong>Langkah 4. Cleaning Data Set</strong><a class="headerlink" href="#langkah-4-cleaning-data-set" title="Permanent link">&para;</a></h3>
+<p><em>Chek missing data</em></p>
+<p>Pastikan data yang akan kita olah tidak terdapat data yang hilang sehingga tidak menimbulkan eror ketika pemprosesan decision tree berlangsung. Gunakan perintah</p>
+<pre class="codehilite"><code class="language-python"> data.isnull().sum()</code></pre>
+
+<p>untuk mengetahui jumlah NaN pada setiap kolom</p>
+<p><img alt="" src="G:assets\images\5.png" /></p>
+<p>ternyata banyak juga yang null, karena kita ingin simple aja tiap baris yang ada data kosong nya akan kita buang. pertama-tama kita buat variabel baru dengan nama</p>
+<pre class="codehilite"><code class="language-python">data_clean = data.dropna()</code></pre>
+
+<p>dimana dengan perintah ini kita akan ngebuang semua baris yang terdapat data kosong</p>
+<p><img alt="" src="../assets/images/6.png" /></p>
+<p>kalau kita bandingkan dengan sebelum di cleaning , sebelumnya terdapat 6504 baris dan sekarang menjadi 4575 baris.</p>
+<p><em>Chek kembali untuk missing data</em></p>
+<p>Gunakan perintah</p>
+<pre class="codehilite"><code class="language-python">data_clean.isnull().sum()</code></pre>
+
+<p>untuk mengetahui jumlah NaN pada setiap kolom, dan liat apa yang terjadi ???</p>
+<p><img alt="" src="../assets/images/7.png" /></p>
+<p>Setelah semuanya aman, dah bisa ke langkah berikutnya.</p>
+<h3 id="langkah-5-modelling-and-prediction"><strong>Langkah 5. Modelling and Prediction</strong><a class="headerlink" href="#langkah-5-modelling-and-prediction" title="Permanent link">&para;</a></h3>
+<p><em>Menetukan explanatory variables dan target variable</em></p>
+<p>Decision trees hanya bisa mengolah data numeric, apabila data nya berupa string maka harus diconvert terlebih dahulu, sekarang kita cek mana saja yang merupakan data numeric. gunakan perintah seperti dibawah ini :</p>
+<pre class="codehilite"><code class="language-python">num_of_numerical_cols = data_clean._get_numeric_data().columns.shape[0]
+ print(num_of_numerical_cols, 'numerical columns')
+ name_of_numerical_cols = data_clean._get_numeric_data().columns
+ print(name_of_numerical_cols)</code></pre>
+
+<p><img alt="" src="../assets/images/8.png" /></p>
+<p>ternyata semua nya data numeric, sekarang kita tentukan mana yang jadi explanatory variable dan target variable. Target variable nya kita ambil <strong>‘TREG1’</strong> merupakan categorical data 0 dan 1 dimana 0 menandakan <strong>non regular smoker</strong> dan 1 adalah <strong>regular smoker.</strong> Untuk explanatory variable kita boleh ambil beberapa variable tapi untuk kasus ini kita hanya ambil 2 saja supaya lebih gampang dalam memahami decision tree. Explanatory variable nya kita ambil <strong>‘marever1’</strong> (pernah atau tidak memakai mariyuana) dan <strong>‘ALCEVR1’</strong> (pernah atau tidak meminum alkhohol) keduanya merupakan categorical data, 0 menandakan tidak dan 1 menandakan prenah. Disini kita mau lihat pengaruh dari explanatory variable terhadap target variable. Biar ada bayangan ayo coba kita lihat datanya. langsung aja diketik :</p>
+<pre class="codehilite"><code class="language-python">data_clean[['TREG1', 'marever1', 'ALCEVR1']].sample(10)</code></pre>
+
+<p>perintah ini akan menampilkan sample random sebanyak 10 buah</p>
+<p><img alt="" src="../assets/images/9.png" /></p>
+<p><em>Split data menjadi training data dan test data</em></p>
+<p>Disini data akan di bagi menjadi 2 bagian, yaitu training data dan test data dengan perbandingan 80% training data dan 20% test data. Dari training data inilah yang nantinya akan kita jadikan acuan sebagai model classifier nya.</p>
+<pre class="codehilite"><code class="language-python">#Split into training and testing sets
+
+predictors = data_clean[['ALCEVR1','marever1']]         # explanatory variable,
+
+targets = data_clean.TREG1                              # respon variable 
+
+X_train, X_test, y_train, y_test  =   train_test_split(predictors, targets, test_size=.2, random_state = 0)   # 0.2 = 80% train data; 20% test data</code></pre>
+
+<p>Sekarang mari kita lihat dimensi dari data nya</p>
+<pre class="codehilite"><code class="language-python">print('X_train = ',X_train.shape  )
+print('X_test = ',X_test.shape  )
+print('y_train = ',y_train.shape  )
+print('y_test = ',y_test.shape  )</code></pre>
+
+<pre class="codehilite"><code class="language-python">X_train =  (3660, 2)
+X_test =  (915, 2)
+y_train =  (3660,)
+y_test =  (915,)</code></pre>
+
+<p><em>Bulid model dan train the model</em></p>
+<pre class="codehilite"><code class="language-python">classifier=DecisionTreeClassifier()
+classifier.fit(X_train,y_train)
+predictions=classifier.predict(X_test)
+confusion_array = sklearn.metrics.confusion_matrix(y_test,predictions)
+print(confusion_array)</code></pre>
+
+<pre class="codehilite"><code class="language-python"> [[750   0]
+ [165   0]]</code></pre>
+
+<pre class="codehilite"><code class="language-python">print('TN = ', confusion_array[0,0] ) # True Negative
+print('FN = ', confusion_array[1,0] ) # False Negative
+print('TP = ', confusion_array[1,1] ) # True Positive
+print('FP = ', confusion_array[0,1] ) # False Positive</code></pre>
+
+<pre class="codehilite"><code class="language-python">TN =  750
+FN =  165
+TP =  0
+FP =  0</code></pre>
+
+<p>Baris pertama dari confussion array di atas merupakan <strong>non regular smoker prediction</strong> : 750 observation dengan benar di klasifikasi sebagai non regular smoker (called true negatives) and 0 observation dengan salah di klasifikasi sebagai non regular smoker ( false positive). Baris kedua merupakan <strong>regular smoker prediction</strong>: 165 observation dengan salah diklasifikasi sebagai regular smoker (false negative) dan 0 observation dengan benar diklasifikasi sebagai regular smooker (true positive)</p>
+<p><em>Accuracy Score</em></p>
+<p>Untuk sementara saya cuma hitung accuracy saja</p>
+<p>In :</p>
+<pre class="codehilite"><code class="language-python"># Accuracy Score
+sklearn.metrics.accuracy_score(y_test, predictions)</code></pre>
+
+<p>Out:</p>
+<pre class="codehilite"><code class="language-python">0.819672131147541</code></pre>
+
+<p><em>Visualize</em></p>
+<p>Dilihat dari decision tree plot dibawah X[0] menandakan ‘marever1’ dan X[1] menandakan ‘ALCEVR1’ , untuk value[0] menandakan non regular smoker and value[1] menandakan regular smoker. Sebagai contoh dari 3660 observation, 2769 observation menandakan tidak pernah mengkonsumsi alkohol sekalipun dalam hidupnya dan dari jumlah yang 2769, sebanyak 1631 tidak pernah mengkonsumsi mariyuana dan dari jumlah itu 1580 merupakan non regular smoker dan 51 orang merupakan regular smoker.</p>
+<pre class="codehilite"><code class="language-python">
+import os
+os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin/'
+
+out = StringIO()
+tree.export_graphviz(classifier, out_file=out)
+import pydotplus
+graph=pydotplus.graph_from_dot_data(out.getvalue())
+Image(graph.create_png())</code></pre>
+
+<p><img alt="" src="../assets/images/10.png" /></p>
+<p><em>DAFTAR PUSTAKA :</em></p>
+<p><a href="https://medium.com/iykra/mengenal-decision-tree-dan-manfaatnya-b98cf3cf6a8d">https://medium.com/iykra/mengenal-decision-tree-dan-manfaatnya-b98cf3cf6a8d</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2019 Mara qonitatila
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/MaraQonita" class="md-footer-social__link fa fa-github-alt"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.8c0d971c.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
